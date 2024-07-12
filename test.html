@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centralização com Flexbox e Botão de Recarregamento</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            position: relative; /* Necessário para posicionar o botão no body */
+        }
+
+        #reload-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="reload-button" onclick="window.location.reload();">Recarregar</button>
+    <div>
+        <!-- Seu conteúdo aqui -->
+        <h1>Conteúdo Centralizado</h1>
+        <p>Mais conteúdo aqui...</p>
+        <p>Mais conteúdo aqui...</p>
+        <p>Mais conteúdo aqui...</p>
+        <!-- Adicione mais conteúdo conforme necessário -->
+    </div>

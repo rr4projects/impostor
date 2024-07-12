@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Usa min-height ao invés de height */
+    margin: 0;
+    position: relative;
+}
+
+#reload-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #4CAF50; 
+}
+
+#impostor-input, #game-setup, #game-board, #turn-info, #next-turn, #start-message {
+    display: none;
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 10px;
+    background-color: lightgray;
+}
+.hidden {
+    background-color: darkgray;
+    cursor: default;
+}
+.disabled {
+    pointer-events: none;
+    background-color: darkgray;
+}
+
+.input-container {
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px;
+}
+
+.info-container {
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px;
+}
+
+/*h1, h2, p {
+    margin-bottom: 20px;
+}*/
+
+input[type="number"], input[type="text"], button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"], input[type="text"] {
+    width: calc(100% - 22px);
+    max-width: 100%;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card.hidden {
+    background-color: #ddd;
+}
+
+.card.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
