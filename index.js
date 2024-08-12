@@ -3,6 +3,7 @@ let numImpostors;
 let playerNames = [];
 let impostorIndexes = [];
 let cards = [];
+let impostors = [];
 let currentPlayerIndex = 0;
 let chosenCardIndex = null;
 let gameStarted = false;
@@ -58,10 +59,12 @@ function startGame(firstStart = true) {
   } else {
     // reset game
     document.getElementById('start-message').style.display = 'none';
+    document.getElementById('final-message').style.display = 'none';
     currentPlayerIndex = 0;
     chosenCardIndex = null;
     gameStarted = false;
     impostorIndexes = [];
+    impostors = [];
   }
 
   // Escolhe uma palavra comum aleatória do arquivo words.js
@@ -122,6 +125,11 @@ function revealCard(index, element) {
   element.classList.remove('hidden');
   element.classList.add('disabled');
   document.getElementById('next-turn').style.display = 'block';
+
+  // save impostor player index
+  if (cards[index] === 'Impostor') {
+    impostors.push(currentPlayerIndex);
+  }
 }
 
 function updateCurrentPlayer() {
@@ -158,4 +166,17 @@ function shuffleArray(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
+}
+
+function showImpostor() {
+  console.log(impostors);
+  document.getElementById('start-message').style.display = 'none';
+  const showImpostorDiv = document.getElementById('show-impostor');
+  showImpostorDiv.innerHTML = '';
+
+  for (var i = 0; i < impostors.length; i++) {
+    const playerNameImpostor = playerNames[impostors[i]];
+    showImpostorDiv.innerHTML += `<p>${playerNameImpostor}</p>`;
+  }
+  document.getElementById('final-message').style.display = 'block';
 }

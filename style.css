@@ -22,7 +22,7 @@ body {
     color: #4CAF50; 
 }
 
-#impostor-input, #game-setup, #game-board, #turn-info, #next-turn, #start-message {
+#impostor-input, #game-setup, #game-board, #turn-info, #next-turn, #start-message, #final-message {
     display: none;
 }
 

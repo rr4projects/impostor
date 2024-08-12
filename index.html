@@ -57,6 +57,13 @@
 
     <div id="start-message" class="info-container">
       <h2>O jogo começou! Descubram quem é o impostor!</h2>
+      <button onclick="showImpostor()">Mostrar impostor</button>
+      <button onclick="startGame(false)">Recomeçar jogo</button>
+    </div>
+
+    <div id="final-message" class="info-container">
+      <p><b>Impostor</b></p>
+      <div id="show-impostor"></div>
       <button onclick="startGame(false)">Recomeçar jogo</button>
     </div>
 
